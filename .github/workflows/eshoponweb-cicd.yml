@@ -5,11 +5,11 @@ on: workflow_dispatch
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-norwayeast
-  LOCATION: norwayeast
+  RESOURCE-GROUP: rg-eshoponweb-swedencentral
+  LOCATION: swedencentral
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  WEBAPP-NAME: devops-webapp-norwayeast-205747148
+  WEBAPP-NAME: devops-webapp-swedencentral-243029982
 
 permissions:
   id-token: write
@@ -88,7 +88,7 @@ jobs:
           subscriptionId: ${{ env.SUBSCRIPTION-ID }}
           resourceGroupName: ${{ env.RESOURCE-GROUP }}
           template: bicep-template/webapp.bicep
-          parameters: "webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}"
+          parameters: "webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }} sku=P0v3"
           failOnStdErr: false
 
       # Publish website to Azure App Service (WebApp)
