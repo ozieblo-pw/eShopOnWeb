@@ -5,11 +5,11 @@ on: workflow_dispatch
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
-  RESOURCE-GROUP: rg-eshoponweb-swedencentral
-  LOCATION: swedencentral
+  RESOURCE-GROUP: rg-eshoponweb-austriaeast
+  LOCATION: austriaeast
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  WEBAPP-NAME: devops-webapp-swedencentral-243029982
+  WEBAPP-NAME: devops-webapp-austriaeast-2363919102
 
 permissions:
   id-token: write
